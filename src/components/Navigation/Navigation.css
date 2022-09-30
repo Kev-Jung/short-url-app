@@ -1,0 +1,128 @@
+.nav-container {
+  border: 1px solid;
+
+}
+
+nav {
+  display: flex; 
+  justify-content: space-between;
+  padding: 40px 30px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.nav-toggle {
+  width: 24px;
+  height: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.nav-toggle-icon {
+  width: 100;
+  border-bottom: 3px solid var(--grayish-violet);
+}
+
+.nav-links-background {
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  width: 90%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark-violet);
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+}
+
+.nav-links-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.nav-links-container:first-child {
+  border-bottom: 1px solid var(--grayish-violet);
+}
+
+.nav-links-container li {
+  padding: 0 0 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sign-up-btn {
+  color: #fff;
+  background: var(--cyan);
+  font-family: var(--poppins-font);
+  font-size: 16px;
+  padding: 12px;
+  width: 245px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+@media (min-width: 950px) {
+  nav {
+    padding: 0;
+    gap: 40px;
+    align-items: center;
+    margin: 40px auto;
+    padding: 0 30px;
+  }
+
+  .logo {
+    overflow: visible;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links-background {
+    color: var(--grayish-violet);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    inset: auto;
+    transform: none;
+    background: none;
+    border-radius: 0;
+  }
+
+  .nav-links-container {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 15px;
+    gap: 40px;
+  }
+
+  .nav-links-container:first-child {
+    border: none;
+  }
+
+  .nav-links-container li {
+    font-weight: 500;
+    height: 0px;
+  }
+
+  .sign-up-btn {
+    color: #fff;
+    background: var(--cyan);
+    font-family: var(--poppins-font);
+    font-size: 13px;
+    padding: 7px 20px;
+    width: auto;
+    border: none;
+    border-radius: 20px;
+  }
+}
