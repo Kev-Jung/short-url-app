@@ -10,6 +10,9 @@
 
   /* Font */
   --poppins-font: font-family: 'Poppins', sans-serif;
+
+  /* size/dimensions */
+  --side-margin: 1200px;
 }
 
 * {
@@ -20,6 +23,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  color: var(--grayish-violet)
 }
 
 ul {

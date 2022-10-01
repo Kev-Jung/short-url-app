@@ -1,5 +1,5 @@
 import "./Navigation.css";
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import logo from "../../images/logo.svg";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -10,9 +10,9 @@ const Navigation = () => {
   };
 
   return (
-    <div>
+    <div id="navigation">
       <nav>
-        <Logo className="logo" />
+        <img src={logo} className="logo" alt="logo" />
         <div className="nav-toggle" onClick={toggleNavHandler}>
           <div className="nav-toggle-icon"></div>
           <div className="nav-toggle-icon"></div>

@@ -1,0 +1,89 @@
+#hero {
+  overflow: hidden;
+  max-width: var(--side-margin);
+  margin: auto;
+}
+
+.hero-img {
+  height: 300px;
+  position: relative;
+  left: 10px;
+}
+
+.hero-cta-container {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.hero-cta-prompt {
+  max-width: 320px;
+  margin: auto;
+}
+
+.hero-cta-prompt h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  color: var(--very-dark-violet);
+}
+
+.hero-cta-prompt p {
+  margin: 10px 0;
+}
+
+@media (min-width: 375px) {
+  .hero-img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 425px) {
+  .hero-img {
+    left: 30px;
+  }
+  .hero-cta-prompt {
+    max-width: 400px;
+  }
+  .hero-cta-prompt h1 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 500px) {
+  .hero-img {
+    left: auto;
+    margin: auto;
+    display: block;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-img-container {
+    position: absolute;
+    left: 50%;
+    margin: 30px 0;
+  }
+
+  .hero-img {
+    height: 410px;
+  }
+
+  .hero-cta-container {
+    text-align: start;
+    display: inline-block;
+    margin: 90px 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-cta-prompt {
+    max-width: 500px;
+  }
+  
+  .hero-cta-prompt h1 {
+    font-size: 60px;
+  }
+
+  .hero-cta-prompt p {
+    font-size: 18px;
+  }
+}

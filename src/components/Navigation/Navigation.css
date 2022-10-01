@@ -1,14 +1,13 @@
-.nav-container {
-  border: 1px solid;
-
-}
-
 nav {
   display: flex; 
   justify-content: space-between;
-  padding: 40px 30px;
-  max-width: 1400px;
+  padding: 30px 30px;
+  max-width: var(--side-margin);
   margin: auto;
+}
+
+.logo {
+  width: 100px;
 }
 
 .nav-toggle {
@@ -17,6 +16,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  cursor: pointer;
 }
 
 .nav-toggle-icon {
@@ -25,10 +25,12 @@ nav {
 }
 
 .nav-links-background {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   visibility: hidden;
   width: 90%;
+  max-width: 485px;
   position: absolute;
   top: 100px;
   left: 50%;
@@ -66,17 +68,14 @@ nav {
   cursor: pointer;
 }
 
-@media (min-width: 950px) {
+@media (min-width: 900px) {
   nav {
-    padding: 0;
     gap: 40px;
     align-items: center;
-    margin: 40px auto;
-    padding: 0 30px;
-  }
-
-  .logo {
-    overflow: visible;
+    margin: 30px auto;
+    /* made change here to padding */
+    padding: 0 60px;
+    justify-content: start;
   }
 
   .nav-toggle {
@@ -88,8 +87,7 @@ nav {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    max-width: 100%;
     padding: 0;
     inset: auto;
     transform: none;
@@ -102,12 +100,13 @@ nav {
     display: flex;
     align-items: center;
     padding: 0;
-    font-size: 15px;
+    font-size: 14px;
     gap: 40px;
   }
 
   .nav-links-container:first-child {
     border: none;
+    margin-right: auto;
   }
 
   .nav-links-container li {
@@ -119,7 +118,7 @@ nav {
     color: #fff;
     background: var(--cyan);
     font-family: var(--poppins-font);
-    font-size: 13px;
+    font-size: 14px;
     padding: 7px 20px;
     width: auto;
     border: none;
