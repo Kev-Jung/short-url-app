@@ -1,0 +1,36 @@
+.button {
+  color: #fff;
+  background: var(--cyan);
+  font-family: var(--poppins-font);
+  border: none;
+  margin: 30px auto;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.get-started-btn {
+  font-size: 17px;
+  padding: 11px;
+  width: 170px;
+  display: block;
+}
+
+.sign-up-btn {
+  font-size: 16px;
+  padding: 12px;
+  width: 245px;
+}
+
+
+@media (min-width: 900px) {
+  .get-started-btn {
+    margin: 30px 0;
+  }
+
+  .sign-up-btn {
+    font-size: 14px;
+    padding: 7px 20px;
+    width: auto;
+    border-radius: 20px;
+  }
+}

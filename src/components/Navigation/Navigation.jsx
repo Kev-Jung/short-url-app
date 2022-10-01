@@ -1,6 +1,7 @@
 import "./Navigation.css";
 import logo from "../../images/logo.svg";
 import { useState } from "react";
+import Button from "../Button/Button";
 
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navigation = () => {
           </ul>
           <ul className="nav-links-container">
             <li>Login</li>
-            <button className="sign-up-btn">Sign Up</button>
+            <Button className="sign-up-btn">Sign Up</Button>
           </ul>
         </div>
       </nav>

@@ -1,6 +1,6 @@
 import "./Hero.css";
 import heroImage from "../../images/illustration-working.svg";
-import GetStartedButton from "../GetStartedButton/GetStartedButton";
+import Button from "../Button/Button";
 
 const Hero = () => {
   return (
@@ -15,7 +15,7 @@ const Hero = () => {
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </p>
-          <GetStartedButton className="cta-btn">Get Started</GetStartedButton>
+          <Button className="get-started-btn">Get Started</Button>
         </div>
       </div>
     </section>

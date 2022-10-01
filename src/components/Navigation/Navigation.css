@@ -56,18 +56,6 @@ nav {
   cursor: pointer;
 }
 
-.sign-up-btn {
-  color: #fff;
-  background: var(--cyan);
-  font-family: var(--poppins-font);
-  font-size: 16px;
-  padding: 12px;
-  width: 245px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
 @media (min-width: 900px) {
   nav {
     gap: 40px;
