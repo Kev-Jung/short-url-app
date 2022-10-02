@@ -3,7 +3,6 @@
   background: var(--cyan);
   font-family: var(--poppins-font);
   border: none;
-  margin: 30px auto;
   cursor: pointer;
   border-radius: 30px;
 }
@@ -13,6 +12,7 @@
   padding: 11px;
   width: 170px;
   display: block;
+  margin: 30px auto;
 }
 
 .sign-up-btn {

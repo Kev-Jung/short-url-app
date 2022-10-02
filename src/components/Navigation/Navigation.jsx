@@ -15,9 +15,9 @@ const Navigation = () => {
       <nav>
         <img src={logo} className="logo" alt="logo" />
         <div className="nav-toggle" onClick={toggleNavHandler}>
-          <div className="nav-toggle-icon"></div>
-          <div className="nav-toggle-icon"></div>
-          <div className="nav-toggle-icon"></div>
+          <div className="nav-toggle-icon" />
+          <div className="nav-toggle-icon" />
+          <div className="nav-toggle-icon" />
         </div>
 
         <div

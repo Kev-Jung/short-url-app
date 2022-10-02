@@ -25,13 +25,13 @@ nav {
 }
 
 .nav-links-background {
-  z-index: 2;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   visibility: hidden;
   width: 90%;
   max-width: 485px;
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
