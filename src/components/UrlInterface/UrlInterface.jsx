@@ -32,8 +32,11 @@ const UrlInterface = () => {
         return (
           <SavedLinks
             key={index}
-            shortenUrl={shortenUrl}
-            originalUrl={originalUrlStorage[index]}
+            shortenUrlInstance={shortenUrl}
+            originalUrlInstance={originalUrlStorage[index]}
+            index={index}
+            setOriginalUrlStorage={setOriginalUrlStorage}
+            setShortenUrlStorage={setShortenUrlStorage}
           />
         );
       })}
