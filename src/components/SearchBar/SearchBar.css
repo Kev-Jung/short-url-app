@@ -19,6 +19,11 @@
   border-top-right-radius: 10px;
 }
 
+.input-field-container {
+  z-index: 3;
+  width: 100%;
+}
+
 .input-field {
   padding: 11px 20px;
   font-family: var(--poppins-font);
@@ -26,7 +31,19 @@
   border: none;
   border-radius: 6px;
   font-size: 16px;
-  z-index: 3;
+  width: 100%;
+}
+
+.error-message {
+  color: var(--red);
+  font-size: 10px;
+  position: absolute;
+  bottom: 69px;
+  left: 24px;
+}
+
+.error {
+  border: 2px solid var(--red);
 }
 
 ::placeholder {
@@ -49,6 +66,13 @@
   .input-field {
     width: 100%;
     border-radius: 8px;
+  }
+
+  .error-message {
+    bottom: 16px;
+    left: 42px;
+    font-size: 12px;
+    font-style: italic;
   }
 }
 

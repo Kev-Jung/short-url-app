@@ -1,8 +1,10 @@
 import "./Button.css";
 
-const Button = ({ children, className }) => {
+const Button = ({ children, className, ...otherProps }) => {
   return (
-    <button className={`button ${className && className}`}>{children}</button>
+    <button {...otherProps} className={`button ${className && className}`}>
+      {children}
+    </button>
   );
 };
 

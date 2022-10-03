@@ -11,7 +11,7 @@
 }
 
 .button:hover {
-  opacity: .5;
+  background: var(--button-hover);
 }
 
 .get-started-btn {
@@ -32,15 +32,18 @@
 
 .copy-btn {
   border-radius: 4px;
-  padding: 5px 16px;
   font-size: 12px;
+  width: 80px;
+  height: 30px;
+  padding: 5px 0;
 }
 
-@media (min-width: 375px) {
-  .copy-btn {
-    font-size: 14px;
-    padding: 5px 20px;
-  }
+.highlighted {
+  background: var(--very-dark-violet)
+}
+
+.highlighted:hover {
+  background: var(--very-dark-violet)
 }
 
 @media (min-width: 900px) {
@@ -60,5 +63,11 @@
   .shorten-btn {
     border-radius: 8px;
     width: 170px;
+  }
+
+  .copy-btn {
+    font-size: 13px;
+    height: 34px;
+    width: 90px;
   }
 }

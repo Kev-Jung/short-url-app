@@ -10,22 +10,42 @@ const SearchBar = ({
   setOriginalUrlStorage,
 }) => {
   const [originalUrl, setOriginalUrl] = useState("");
+  const [error, setError] = useState({
+    isError: false,
+    errorMessage: "",
+  });
+  const { isError, errorMessage } = error;
 
   const setUrlHandler = (e) => {
     setOriginalUrl(e.target.value);
   };
 
-  const resetSearchBar = () => setOriginalUrl("");
+  const resetSearchBar = () => {
+    setOriginalUrl("");
+    setError({
+      isError: false,
+      errorMessage: "",
+    });
+  };
 
   const fetchAPIHandler = async (e) => {
     e.preventDefault();
-    const response = await fetch(
-      `https://api.shrtco.de/v2/shorten?url=${originalUrl}`
-    );
-    const { result } = await response.json();
-    setShortenUrlStorage([...shortenUrlStorage, result.full_short_link]);
-    setOriginalUrlStorage([...originalUrlStorage, originalUrl]);
-    resetSearchBar();
+    try {
+      const response = await fetch(
+        `https://api.shrtco.de/v2/shorten?url=${originalUrl}`
+      );
+      const { result } = await response.json();
+      setShortenUrlStorage([...shortenUrlStorage, result.full_short_link]);
+      setOriginalUrlStorage([...originalUrlStorage, originalUrl]);
+      resetSearchBar();
+    } catch {
+      originalUrl.length === 0
+        ? setError({ isError: true, errorMessage: "Please add a link" })
+        : setError({
+            isError: true,
+            errorMessage: "Please type a valid link",
+          });
+    }
   };
 
   return (
@@ -35,13 +55,16 @@ const SearchBar = ({
         src={shortenMobileBackground}
         alt="searchbar-background"
       />
-      <input
-        onChange={setUrlHandler}
-        className="input-field"
-        type="text"
-        value={originalUrl}
-        placeholder="Shorten a link here..."
-      />
+      <div className="input-field-container">
+        <input
+          onChange={setUrlHandler}
+          className={`input-field ${isError && "error"}`}
+          type="text"
+          value={originalUrl}
+          placeholder="Shorten a link here..."
+        />
+        <span className="error-message">{errorMessage}</span>
+      </div>
       <Button className="shorten-btn">Shorten It!</Button>
     </form>
   );

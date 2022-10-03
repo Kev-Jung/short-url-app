@@ -1,8 +1,15 @@
 import "./SavedLinks.css";
 import Button from "../Button/Button";
+import { useState } from "react";
 
 const SavedLinks = ({ originalUrl, shortenUrl }) => {
-  console.log(originalUrl);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboardHandler = () => {
+    navigator.clipboard.writeText(shortenUrl);
+    setIsCopied(!isCopied);
+  };
+
   return (
     <div className="saved-links-container">
       <span className="delete-url-btn">&#x2715;</span>
@@ -11,7 +18,12 @@ const SavedLinks = ({ originalUrl, shortenUrl }) => {
       </div>
       <div className="short-url-container">
         <span className="shorten-url">{shortenUrl}</span>
-        <Button className="copy-btn">Copy</Button>
+        <Button
+          onClick={copyToClipboardHandler}
+          className={`copy-btn ${isCopied && "highlighted"}`}
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </Button>
       </div>
     </div>
   );
