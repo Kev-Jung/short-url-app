@@ -1,0 +1,25 @@
+.boost-cta-container {
+  background-image: url("../../images/bg-boost-mobile.svg");
+  background-color: var(--dark-violet);
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+@media (max-width: 400px) {
+  .boost-cta-container {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 600px) {
+  .boost-cta-container {
+    background-image: url("../../images/bg-boost-desktop.svg");
+    height: 230px;
+  }
+}

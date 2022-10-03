@@ -18,7 +18,7 @@
   font-size: 17px;
   width: 170px;
   display: block;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 .sign-up-btn {
@@ -48,7 +48,7 @@
 
 @media (min-width: 900px) {
   .get-started-btn {
-    margin: 30px 0;
+    margin: 20px 0;
   }
 
   .sign-up-btn {
