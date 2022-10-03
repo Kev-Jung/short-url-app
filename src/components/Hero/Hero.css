@@ -1,8 +1,7 @@
 #hero {
   overflow: hidden;
   max-width: var(--side-margin);
-  margin: auto;
-  padding-bottom: 200px;
+  margin: 0 auto 100px;
   position: relative;
 }
 

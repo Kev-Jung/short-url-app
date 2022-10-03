@@ -25,7 +25,7 @@ nav {
 }
 
 .nav-links-background {
-  z-index: 4;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   visibility: hidden;
@@ -56,12 +56,15 @@ nav {
   cursor: pointer;
 }
 
+.nav-links-container li:hover {
+  color: var(--very-dark-violet);
+}
+
 @media (min-width: 900px) {
   nav {
     gap: 40px;
     align-items: center;
     margin: 30px auto;
-    /* made change here to padding */
     padding: 0 60px;
     justify-content: start;
   }
