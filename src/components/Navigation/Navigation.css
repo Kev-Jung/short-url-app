@@ -53,8 +53,12 @@ nav {
   padding: 20px 0;
 }
 
-.nav-links-container:nth-child(2) {
+.nav-links-container:nth-of-type(1) {
   border-bottom: 1px solid var(--grayish-violet);
+}
+
+.nav-links-container:nth-of-type(2) li:nth-of-type(1) {
+  padding-top: 20px;
 }
 
 .nav-links-container li {
@@ -98,9 +102,13 @@ nav {
     gap: 40px;
   }
 
-  .nav-links-container:nth-child(2) {
+  .nav-links-container:nth-of-type(1) {
     border: none;
     margin-right: auto;
+  }
+
+  .nav-links-container:nth-of-type(2) li:nth-of-type(1) {
+    padding-top: 0;
   }
 
   .nav-links-container li {

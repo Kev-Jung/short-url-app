@@ -38,11 +38,7 @@
   padding: 5px 0;
 }
 
-.highlighted {
-  background: var(--very-dark-violet)
-}
-
-.highlighted:hover {
+.highlighted, .highlighted:hover {
   background: var(--very-dark-violet)
 }
 
