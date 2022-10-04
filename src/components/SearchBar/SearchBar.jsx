@@ -2,13 +2,9 @@ import Button from "../Button/Button";
 import "./SearchBar.css";
 import shortenMobileBackground from "../../images/bg-shorten-mobile.svg";
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
-const SearchBar = ({
-  shortenUrlStorage,
-  setShortenUrlStorage,
-  originalUrlStorage,
-  setOriginalUrlStorage,
-}) => {
+const SearchBar = ({ urlStorage, setUrlStorage }) => {
   const [originalUrl, setOriginalUrl] = useState("");
   const [error, setError] = useState({
     isError: false,
@@ -28,17 +24,20 @@ const SearchBar = ({
     });
   };
 
-  const fetchAPIHandler = async (e) => {
+  const fetchAPI = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch(
         `https://api.shrtco.de/v2/shorten?url=${originalUrl}`
       );
       const { result } = await response.json();
-      setShortenUrlStorage([...shortenUrlStorage, result.full_short_link]);
-      setOriginalUrlStorage([...originalUrlStorage, originalUrl]);
+      const shortUrl = result.full_short_link;
+      setUrlStorage([
+        ...urlStorage,
+        { id: uuid(), original: originalUrl, shortened: shortUrl },
+      ]);
       resetSearchBar();
-    } catch {
+    } catch (err) {
       originalUrl.length === 0
         ? setError({ isError: true, errorMessage: "Please add a link" })
         : setError({
@@ -49,7 +48,7 @@ const SearchBar = ({
   };
 
   return (
-    <form onSubmit={fetchAPIHandler} className="searchbar-container">
+    <form onSubmit={fetchAPI} className="searchbar-container">
       <img
         className="searchbar-background"
         src={shortenMobileBackground}
