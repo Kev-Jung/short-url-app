@@ -4,39 +4,38 @@ import "./UrlInterface.css";
 import { useState, useEffect } from "react";
 
 const UrlInterface = () => {
-  const [originalUrlStorage, setOriginalUrlStorage] = useState(() => {
-    return JSON.parse(localStorage.getItem("url")) || [];
+  // state to hold both short url and url entered by user
+  const [urlStorage, setUrlStorage] = useState(() => {
+    // retrieves data stored in localStorage as state value. If empty, localStorage returns "null" which puts a blank array as initial value for state
+    const getLocalStorage = JSON.parse(localStorage.getItem("url"));
+    if (getLocalStorage === null) {
+      return [];
+    } else {
+      return getLocalStorage;
+    }
   });
 
-  const [shortenUrlStorage, setShortenUrlStorage] = useState(() => {
-    return JSON.parse(localStorage.getItem("short-url")) || [];
-  });
-
+  // Valid url entered from Searchbar component will update the state, which this useEffect will then set the localStorage as a string after every state change
   useEffect(() => {
-    localStorage.setItem("url", JSON.stringify(originalUrlStorage));
-  }, [originalUrlStorage]);
+    localStorage.setItem("url", JSON.stringify(urlStorage));
+  }, [urlStorage]);
 
-  useEffect(() => {
-    localStorage.setItem("short-url", JSON.stringify(shortenUrlStorage));
-  }, [shortenUrlStorage]);
+  const deleteUrlFromLocalStorage = (id) => {
+    const filteredLocalStorage = urlStorage.filter((url) => url.id !== id);
+    setUrlStorage(filteredLocalStorage);
+  };
 
   return (
     <div id="url-interface">
-      <SearchBar
-        shortenUrlStorage={shortenUrlStorage}
-        setShortenUrlStorage={setShortenUrlStorage}
-        originalUrlStorage={originalUrlStorage}
-        setOriginalUrlStorage={setOriginalUrlStorage}
-      />
-      {shortenUrlStorage.map((shortenUrl, index) => {
+      <SearchBar urlStorage={urlStorage} setUrlStorage={setUrlStorage} />
+      {urlStorage.map((url) => {
         return (
           <SavedLinks
-            key={index}
-            shortenUrlInstance={shortenUrl}
-            originalUrlInstance={originalUrlStorage[index]}
-            index={index}
-            setOriginalUrlStorage={setOriginalUrlStorage}
-            setShortenUrlStorage={setShortenUrlStorage}
+            key={url.id}
+            deleteUrlFromLocalStorage={deleteUrlFromLocalStorage}
+            original={url.original}
+            shortened={url.shortened}
+            id={url.id}
           />
         );
       })}
