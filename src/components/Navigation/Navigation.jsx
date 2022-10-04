@@ -24,6 +24,9 @@ const Navigation = () => {
           className="nav-links-background"
           style={{ visibility: navOpen && "visible" }}
         >
+          <span onClick={toggleNavHandler} className="nav-exit-btn">
+            &#x2715;
+          </span>
           <ul className="nav-links-container">
             <li>Features</li>
             <li>Pricing</li>

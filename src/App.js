@@ -4,16 +4,18 @@ import Hero from './components/Hero/Hero';
 import Informational from './components/Informational/Informational';
 import UrlInterface from './components/UrlInterface/UrlInterface';
 import BoostCTA from './components/BoostCTA/BoostCTA';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navigation />
       <Hero />
       <UrlInterface />
       <Informational />
       <BoostCTA />
-    </div>
+      <Footer />
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 const BoostCTA = () => {
   return (
-    <div className="boost-cta-container">
+    <div id="boost-cta">
       <h2>Boost your links today</h2>
       <Button className="get-started-btn">Get Started</Button>
     </div>

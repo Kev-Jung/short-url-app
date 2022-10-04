@@ -1,4 +1,4 @@
-.boost-cta-container {
+#boost-cta {
   background-image: url("../../images/bg-boost-mobile.svg");
   background-color: var(--dark-violet);
   background-size: cover;
@@ -18,7 +18,7 @@
 }
 
 @media (min-width: 600px) {
-  .boost-cta-container {
+  #boost-cta {
     background-image: url("../../images/bg-boost-desktop.svg");
     height: 230px;
   }

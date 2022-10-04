@@ -21,7 +21,7 @@ const UrlInterface = () => {
   }, [shortenUrlStorage]);
 
   return (
-    <div className="url-interface-container">
+    <div id="url-interface">
       <SearchBar
         shortenUrlStorage={shortenUrlStorage}
         setShortenUrlStorage={setShortenUrlStorage}

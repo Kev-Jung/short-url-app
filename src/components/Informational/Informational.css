@@ -1,4 +1,4 @@
-#informational-container {
+#informational {
   background: rgb(247, 247, 249);
   padding: 20px 0 0;
 }
@@ -35,7 +35,7 @@
 }
 
 @media (min-width: 900px) {
-  #informational-container {
+  #informational {
     padding-bottom: 70px;
   }
 

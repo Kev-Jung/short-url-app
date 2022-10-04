@@ -6,7 +6,7 @@ import fullyCustomizableSVG from "../../images/icon-fully-customizable.svg";
 
 const Informational = () => {
   return (
-    <div id="informational-container">
+    <div id="informational">
       <div className="informational-prompt">
         <h3>Advanced Statistics</h3>
         <p>
