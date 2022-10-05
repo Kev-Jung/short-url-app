@@ -2,7 +2,7 @@
 
 This is my solution to the [Shortly URL Shortening API Landing Page Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
 
-[View Live Solution](https://kev-jung.github.io/interactive-card-form/)
+[View Live Solution](https://kev-jung.github.io/short-url-app)
 
 ## The Challenge
 
@@ -25,7 +25,7 @@ Users should be able to:
 - Mobile-first workflow
 - React
 - Local Storage (for data persistance and memory)
-- [ShrtCode - URL shortener API](https://shrtco.de/docs)
+- [URL shortener API - ShrtCode](https://shrtco.de/docs)
 
 ## Demo
 
